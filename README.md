@@ -26,6 +26,11 @@ I treat LLM systems with the same rigour as any other production backend — typ
 - **Retrieval** — pgvector for transactional metadata-adjacent search; LanceDB for local, file-backed embedding stores; hybrid retrieval (BM25 + vector) where pure semantic search underperforms.
 - **Production LLM hygiene** — prompt caching / system-instruction reuse, 429-rate-limit fallbacks to local templates (real users never see a 500), function calling with strict JSON schemas, streaming responses with per-call token accounting for cost monitoring.
 
+#### 📦 Open source
+
+- **[go-saga](https://github.com/tmac33/go-saga)** — Tiny generic synchronous saga library for Go. Deterministic rollback, survives client disconnect via `context.WithoutCancel`, ~150 LOC, zero deps, 97% test coverage. Abstracts the pattern I've shipped to production several times for telecom provisioning.
+- **[goauth-demo](https://github.com/tmac33/goauth-demo)** — Production-shaped JWT auth service. Single-use refresh-token rotation via atomic `UPDATE ... RETURNING`, bcrypt, Postgres, Prometheus + OpenTelemetry, k6 load tests with p95/p99 thresholds.
+
 #### 🚀 Backend systems I've shipped
 
 Most of my production work lives in private repos, so here are the systems I've designed and led:
