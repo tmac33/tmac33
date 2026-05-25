@@ -37,7 +37,7 @@ Most of my production work lives in private repos, so here are the systems I've 
 
 - **UFB Product Service** *(One New Zealand, 2024–present)* — Tech lead for the central orchestration layer for Ultra-Fast Broadband provisioning on One NZ's wholesale NaaS platform. End-to-end provisioning across 7 microservices and 4 LFC operators (Chorus, Enable, Northpower, UFF), serving ~40 RSPs nationally. Synchronous saga with `defer`-based deterministic rollback across 5+ downstream gRPC services.
 
-- **NZ Mobile Number Portability** *(IQ Hive / Vodafone NZ, 2022–2024)* — Implemented the full NZ TCF LMNP protocol as a dual-interface gRPC server. 13 port scenarios, characteristic-based state machine, two-phase inter-carrier activation with atomic MSISDN cutover at RFS. Replaced two legacy porting platforms.
+- **NZ Mobile Number Portability** *(Vodafone NZ, 2022–2024)* — Implemented the full NZ TCF LMNP protocol as a dual-interface gRPC server. 13 port scenarios, characteristic-based state machine, two-phase inter-carrier activation with atomic MSISDN cutover at RFS. Replaced two legacy porting platforms.
 
 - **Mobile Postpay & FWA Product Services** — Distributed saga provisioning for multi-resource allocation (MSISDN, OCS, Cellular, IPv4, SIM) with cascaded compensating transactions across 17 downstream gRPC integrations. `context.WithoutCancel` rollback ensures cleanup after client disconnect.
 
