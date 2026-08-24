@@ -1,52 +1,72 @@
 ### Hi, I'm Cosmo 👋
 
-**Senior Backend Engineer · Go · Distributed Systems · LLM Applications**
+**Senior Backend Engineer · Go · Distributed Systems · AI Agent Runtime**
 📍 Auckland, New Zealand · 🌐 [tmac33.top](https://www.tmac33.top) · ✉️ therealtmac33@gmail.com
 
 ---
 
-I build backend platforms that orchestrate complex, multi-party systems — telecom provisioning, number portability, wholesale APIs. 10+ years of experience, currently focused on Go, gRPC, and GCP-native architectures, with a parallel track in LLM-powered tooling and agent orchestration.
+I'm interested in distributed systems, developer infrastructure, and AI agent runtime design.
 
-#### 🛠️ What I work with daily
+My work has been focused on **distributed development** and infrastructure for building, debugging, and operating complex software systems. Recently, I’ve been extending this direction into **AI agent infrastructure** — especially around agent execution, sandboxing, replay, memory, and long-running workflows.
 
-- **Languages:** Go, Python, TypeScript, Rust *(learning)*, C#
-- **APIs & RPC:** gRPC, Protocol Buffers, grpc-gateway, REST, SOAP/WSDL, TMF Open APIs
-- **Cloud:** GCP (Cloud Run, BigTable, Pub/Sub, Firestore, BigQuery), Docker, Terraform
-- **Databases:** PostgreSQL, MySQL, BigTable, Firestore — and **pgvector / LanceDB** for embeddings
-- **Observability:** Datadog, Jaeger, OpenTelemetry, Prometheus, Sentry, OpenCensus
-- **Patterns:** Microservices, event-driven, saga / compensating transactions, state machines, multi-tenancy
+## Current Focus
 
-#### 🤖 LLM & agent work
+I'm building [Agent Experience](https://github.com/agent-experience), an open-source organization exploring infrastructure for AI agents.
 
-I treat LLM systems with the same rigour as any other production backend — typed contracts, graceful degradation, observability, cost control. Things I've built or shipped:
+The core idea:
 
-- **Agent skill systems** — maintain 90+ reusable skills across two frameworks (Hermes, OpenClaw); designed the on-disk skill layout and Git-sync workflow so agents and humans share the same source of truth.
-- **Multi-agent orchestration** — LangGraph / CrewAI workflows for content pipelines (research → draft → review → publish) with deterministic step boundaries instead of free-form planning loops.
-- **MCP servers & Claude Skills SDK** — built tools that agents call directly; clean tool schemas, idempotent side effects, structured errors.
-- **Retrieval** — pgvector for transactional metadata-adjacent search; LanceDB for local, file-backed embedding stores; hybrid retrieval (BM25 + vector) where pure semantic search underperforms.
-- **Production LLM hygiene** — prompt caching / system-instruction reuse, 429-rate-limit fallbacks to local templates (real users never see a 500), function calling with strict JSON schemas, streaming responses with per-call token accounting for cost monitoring.
+> AI agents will increasingly behave like distributed software systems — they need better runtime, memory, sandboxing, observability, replay, and evaluation infrastructure.
 
-#### 📦 Open source
+We are interested in:
 
-- **[go-saga](https://github.com/tmac33/go-saga)** — Tiny generic synchronous saga library for Go. Deterministic rollback, survives client disconnect via `context.WithoutCancel`, ~150 LOC, zero deps, 97% test coverage. Abstracts the pattern I've shipped to production several times for telecom provisioning.
-- **[goauth-demo](https://github.com/tmac33/goauth-demo)** — Production-shaped JWT auth service. Single-use refresh-token rotation via atomic `UPDATE ... RETURNING`, bcrypt, Postgres, Prometheus + OpenTelemetry, k6 load tests with p95/p99 thresholds.
+* distributed agent runtime
+* agent sandbox execution
+* long-term agent memory
+* agent replay and debugging
+* checkpointing and forkable workflows
+* trace-based evaluation
+* experience learning from previous runs
 
-#### 🚀 Backend systems I've shipped
+## Agent Replay
 
-Most of my production work lives in private repos, so here are the systems I've designed and led:
+Our first project is [Agent Replay](https://github.com/agent-experience/agent-replay):
 
-- **UFB Product Service** *(One New Zealand, 2024–present)* — Tech lead for the central orchestration layer for Ultra-Fast Broadband provisioning on One NZ's wholesale NaaS platform. End-to-end provisioning across 7 microservices and 4 LFC operators (Chorus, Enable, Northpower, UFF), serving ~40 RSPs nationally. Synchronous saga with `defer`-based deterministic rollback across 5+ downstream gRPC services.
+> Time-travel debugging for AI agents.
 
-- **NZ Mobile Number Portability** *(Vodafone NZ, 2022–2024)* — Implemented the full NZ TCF LMNP protocol as a dual-interface gRPC server. 13 port scenarios, characteristic-based state machine, two-phase inter-carrier activation with atomic MSISDN cutover at RFS. Replaced two legacy porting platforms.
+Agent Replay helps developers record, inspect, replay, fork, and learn from AI agent executions.
 
-- **Mobile Postpay & FWA Product Services** — Distributed saga provisioning for multi-resource allocation (MSISDN, OCS, Cellular, IPv4, SIM) with cascaded compensating transactions across 17 downstream gRPC integrations. `context.WithoutCancel` rollback ensures cleanup after client disconnect.
+```text
+Trace → Inspect → Replay → Fork → Learn
+```
 
-#### 🔭 Currently exploring
+## Technical Interests
 
-- Authentication protocols (OAuth, OIDC, SAML) and identity at scale
-- Postgres operational concerns — schema migrations, multi-tenant patterns, pgvector tuning
-- Rust for systems-level work
-- Where the line should sit between deterministic workflows and agent autonomy
+* Distributed systems
+* Developer tools
+* AI agents
+* Agent runtime infrastructure
+* Sandboxed execution
+* Long-term memory systems
+* Observability and debugging
+* Open-source infrastructure
+
+## Direction
+
+I believe the next layer of AI infrastructure will not be only about models.
+
+It will be about making agents:
+
+```text
+reliable
+observable
+replayable
+stateful
+safe to execute
+able to learn from experience
+```
+
+If you're interested in AI agents, distributed systems, or developer infrastructure, feel free to follow the projects or start a discussion.
+
 
 #### 📫 Get in touch
 
