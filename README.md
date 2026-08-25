@@ -1,13 +1,12 @@
 ### Hi, I'm Cosmo 👋
 
-**Senior Backend Engineer · Go · Distributed Systems · AI Agent Runtime**
-📍 Auckland, New Zealand · 🌐 [tmac33.top](https://www.tmac33.top) · ✉️ therealtmac33@gmail.com
+**Senior Backend Engineer · Distributed Systems · AI Agent Runtime**
+📍 Auckland, New Zealand · ✉️ therealtmac33@gmail.com
 
 ---
 
-I'm interested in distributed systems, developer infrastructure, and AI agent runtime design.
-
-My work has been focused on **distributed development** and infrastructure for building, debugging, and operating complex software systems. Recently, I’ve been extending this direction into **AI agent infrastructure** — especially around agent execution, sandboxing, replay, memory, and long-running workflows.
+10+ years experience on **distributed development** and infrastructure for building, debugging, and operating complex software systems. 
+Recently, I’ve been extending this direction into **AI agent infrastructure** — especially around agent execution, sandboxing, replay, memory, and long-running workflows.
 
 ## Current Focus
 
